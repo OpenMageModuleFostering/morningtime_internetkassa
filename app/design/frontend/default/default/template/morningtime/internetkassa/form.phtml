@@ -1,0 +1,55 @@
+<?php
+/**
+ * Magento Internetkassa extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Morningtime
+ * @package    Morningtime_Internetkassa
+ * @copyright  Copyright (c) 2009 Morningtime Internet
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<fieldset class="form-list">
+		<?php
+		$_code=$this->getMethodCode() ;
+		$_method = $this->getMethod();
+?>
+<span id="internetkassa-please-wait" style="display:none;" class="opc-please-wait">
+       <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" class="v-middle" alt="" /> &nbsp; <?php echo $this->__('Loading next step...') ?> &nbsp;
+</span>
+<ul id="payment_form_<?php echo $_code ?>" style="display:none">
+	<li>
+	<strong><?php print $this->__('Choose your payment method'); ?>:</strong>
+	</li>
+<?php
+		$logoArray = array();
+		$listItems = Mage::getModel('internetkassa/source_paymentMethodsList')->getPMList();
+		foreach ($listItems as $item):
+			$logoArray[$item->getPmName()] = $item->getPmUrlLogo();
+		endforeach;
+
+        if ($_method ) {
+            $availableTypes = $_method->getConfigData('cctypes');
+            if ($availableTypes) {
+
+                $availableTypes = explode(',', $availableTypes);
+
+                foreach ($availableTypes as $key=>$name) {
+                    ?>
+                	<li style="border-bottom: 1px solid #ddd; padding: 0.5em; margin: auto; height: 25px; line-height: 25px;">
+						<img src="https://secure.ogone.com/images/<?php echo $logoArray[$name] ?>" style="float: right; margin-right: 1em;" height="25">
+		                <input type="radio" name="payment[cc_type]" value="<?php echo $name?>"> <?php echo $name?>
+		        	</li>
+		        	<?php
+                }
+            }
+        }
+	?>
+    </ul>
+</fieldset>

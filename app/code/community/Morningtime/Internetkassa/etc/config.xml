@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+/**
+ * Morningtime Internetkassa extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Morningtime
+ * @package    Morningtime_Internetkassa
+ * @copyright  Copyright (c) 2009 Morningtime Internet, http://www.morningtime.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <Morningtime_Internetkassa>
+            <version>1.3.2.4.4</version>
+        </Morningtime_Internetkassa>
+    </modules>
+    <global>
+        <models>
+            <internetkassa>
+                <class>Morningtime_Internetkassa_Model</class>
+            </internetkassa>
+        </models>
+        <blocks>
+            <internetkassa>
+                <class>Morningtime_Internetkassa_Block</class>
+            </internetkassa>
+        </blocks>
+        <resources>
+            <internetkassa_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </internetkassa_write>
+            <internetkassa_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </internetkassa_read>
+        </resources>
+        <helpers>
+            <internetkassa>
+                <class>Morningtime_Internetkassa_Helper</class>
+            </internetkassa>
+        </helpers>
+        <payment>
+            <internetkassa>
+                <languages>
+                    <US>
+                        <code>US</code>
+                        <name>US ENglish</name>
+                    </US>
+                    <NL>
+                        <code>NL</code>
+                        <name>Dutch</name>
+                    </NL>
+                </languages>
+                <currencies>
+                    <EUR>
+                        <code>978</code>
+                        <name>Euro</name>
+                    </EUR>
+                    <CAD>
+                        <code>124</code>
+                        <name>Canadian Dollar</name>
+                    </CAD>
+                    <CHF>
+                        <code>756</code>
+                        <name>Swiss Franc</name>
+                    </CHF>
+                    <SEK>
+                        <code>752</code>
+                        <name>Swedish Krone</name>
+                    </SEK>
+                    <GBP>
+                        <code>826</code>
+                        <name>Pound Sterling</name>
+                    </GBP>
+                    <USD>
+                        <code>840</code>
+                        <name>US Dollar</name>
+                    </USD>
+                </currencies>
+            </internetkassa>
+        </payment>
+    </global>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <Morningtime_Internetkassa>
+                    <files>
+                        <default>Morningtime_Internetkassa.csv</default>
+                    </files>
+                </Morningtime_Internetkassa>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <frontend>
+        <blocks>
+            <internetkassa>
+                <class>Morningtime_Internetkassa_Block</class>
+            </internetkassa>
+        </blocks>
+        <routers>
+            <internetkassa>
+                <use>standard</use>
+                <args>
+                    <module>Morningtime_Internetkassa</module>
+                    <frontName>internetkassa</frontName>
+                </args>
+            </internetkassa>
+        </routers>
+        <translate>
+            <modules>
+                <Morningtime_Internetkassa>
+                    <files>
+                        <default>Morningtime_Internetkassa.csv</default>
+                    </files>
+                </Morningtime_Internetkassa>
+            </modules>
+        </translate>
+    </frontend>
+
+    <default>
+        <payment>
+            <internetkassa>
+                <active>0</active>				
+                <model>internetkassa/internetkassa</model>
+                <title>Internetkassa</title>
+                <order_status>pending</order_status>
+				<ogone_logo>https://secure.ogone.com/images/ogone.gif</ogone_logo>
+				<SHA1PASS></SHA1PASS>
+                <PSPID></PSPID>
+				<Currency>EUR</Currency>
+				<Language>nl_NL</Language>
+				<PAGE_TITLE></PAGE_TITLE>
+				<BGCOLOR>#AF390A</BGCOLOR>
+				<TXTCOLOR>#CDC40F</TXTCOLOR>
+				<TBLBGCOLOR>#CDC40F</TBLBGCOLOR>
+				<TBLTXTCOLOR>#000000</TBLTXTCOLOR>
+				<BUTTONBGCOL>#763642</BUTTONBGCOL>
+				<BUTTONTXTCOLOR>#CDC40F</BUTTONTXTCOLOR>
+				<FONTTYPE>Verdana</FONTTYPE>
+				<LOGO></LOGO>
+				<TP></TP>
+				<accepturl>{{unsecure_base_url}}internetkassa/result/success</accepturl>
+				<declineurl>{{unsecure_base_url}}internetkassa/result/decline</declineurl>
+				<exceptionurl>{{unsecure_base_url}}internetkassa/result/exception</exceptionurl>
+				<cancelurl>{{unsecure_base_url}}internetkassa/result/cancel</cancelurl>
+				<homeurl>{{unsecure_base_url}}</homeurl>
+				<catalogurl>{{unsecure_base_url}}</catalogurl>
+				<CN></CN>
+				<EMAIL></EMAIL>
+				<PM></PM>
+				<BRAND></BRAND>
+				<SHASign></SHASign> 
+				<Signature></Signature>
+				<ownerZIP></ownerZIP>
+				<owneraddress></owneraddress>
+				<ownercty></ownercty>
+				<Alias></Alias>
+				<AliasUsage></AliasUsage>
+				<AliasOperationCOM></AliasOperationCOM>
+				<COMPLUS></COMPLUS>
+				<PARAMPLUS></PARAMPLUS>
+				<PARAMVAR></PARAMVAR>
+				<USERID></USERID>
+				<CreditCode></CreditCode>
+                <allowspecific>0</allowspecific>
+            </internetkassa>
+        </payment>
+    </default>
+</config>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<package>
+    <name>Morningtime_Internetkassa</name>
+    <version>1.3.2.4.5</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL 3.0)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>(Dutch only) - Internetkassa voor iDEAL Only, Rabobank, ABN AMRO, ING Bank (TWYP), Fortis (NEOS) en Ogone. Ondersteuning voor iDEAL, Credit Cards, Paypal en veel meer!</summary>
+    <description>== UPDATE 1.3.2.4.5 ==
+Fix for mastercard.
+
+== UPDATE 1.3.2.4.4 ==
+
+- Nu met configuratie instellingen per store-view
+- Daardoor ook toevoegen store-code in URL mogelijk (handmatig)
+
+Installatie in twee stappen. 1. Magento, 2. Internetkassa
+
+== 1. INSTALLATIE MAGENTO ==
+Installeren via Magento Connect. Refresh cache en opnieuw inloggen in admin. Bekijk de instellingen op Systeem &gt; Configuratie &gt; Betaalwijzen &gt; Internetkassa. 
+
+De volgende instellingen wijzigen:
+
+- Enabled: Yes
+- Test mode: Yes
+- Issuer: kies uw bank / systeem
+- Currency: kies uw munteenheden
+- PSPID: uw pspid van uw bank / systeem
+- Language: kies transactie-taal
+- Payment methods: selecteer uw betaal opties, bijvoorbeeld iDEAL
+- Order status: in afwachting
+
+== 2. INTERNETKASSA ==
+- login op uw test account
+- activeer gewenste betaalmethoden, bijv. iDEAL en VISA (vraag hulp bij bank)
+- Ga naar "technische informatie":
+
+Tabblad Algemeen:
+- Standaard operatie: "Verkoop"
+- Verwerking transacties: "Altijd online"
+
+Tabblad Data en herkomst:
+- Url van de pagina is http://www.uwdomein.nl/
+- SHA1In versleuting: verzin een sterk wachtwoord
+
+Tabblad Transactiefeedback
+- Urls leeg laten (loopt via shop)
+- " Ik wil transactie feedback parameters" aanvinken
+- SHA1OUT versleuteling: vooer hetzelfde wachtwoord in als bij SHA1IN
+
+KLAAR - na testen kunt u het test-account omzetten naar productie. Voer dan weer dezelfde instellingen in!
+
+== COMMERCIELE HULP ==
+Voor commerciele hulp bij installaties, stuur een email naar info@morningtime.com. 
+
+== ONDERSTEUNING VOOR: ==
+- iDEAL Only Kassa's
+- Rabo Internetkassa
+- ABN AMRO Internetkassa
+- ING Bank / The Way You Pay (TWYP)
+- Fortis Bank (NEOS Solutions)
+- Ogone
+
+== BETAALMETHODEN ==
+- iDEAL, PayPal, Wallie
+
+- Credit Cards: CB, AIRPLUS, American Express, Aurora, Aurore, Cofinoga, Dankort, Diners Club, JCB, Maestro UK, MasterCard, Solo, UATP, VISA
+
+- Web Money: NetREserve, UNEUROCOM, 
+
+- Internetbankieren: CBC Online, CENTEA Online, Dexia Direct Net, eDankort, EPS, iDEAL, ING HomePay, KBC Online, PostFinance Debit Direct, PostFInance yellownet, Direct Debits DE, NL
+
+- Offline: Acceptgiro, Bank transfer, Payment on Delivery
+
+- Micro </description>
+    <notes>Stable release.</notes>
+    <authors><author><name>Mathijs Koenraadt</name><user>auto-converted</user><email>info@morningtime.com</email></author></authors>
+    <date>2009-10-29</date>
+    <time>07:14:05</time>
+    <contents><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="morningtime"><dir name="internetkassa"><file name="info.phtml" hash="8b92d5fd7b12cdc190fdfc8416e51630"/><dir name="pdf"><file name="info.phtml" hash="c210a66172ca6655faaca27de6ee941c"/></dir></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="default"><dir name="default"><dir name="template"><dir name="morningtime"><dir name="internetkassa"><file name="form.phtml" hash="c1098b177f0b1dfbb6147a9a709a0c7b"/><file name="info.phtml" hash="1109a89242b9700c6429e86b72e738d3"/></dir></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="en_US"><file name="Morningtime_Internetkassa.csv" hash="5319bbb126b9f483cb99b66bc12a4500"/></dir><dir name="nl_NL"><file name="Morningtime_Internetkassa.csv" hash="82037bd514a36f6c9d2c51f73eb3ed07"/></dir></target><target name="mageetc"><dir name="modules"><file name="Morningtime_Internetkassa.xml" hash="72bac1663ed0d6a23b101a272956144a"/></dir></target><target name="magecommunity"><dir name="Morningtime"><dir name="Internetkassa"><dir name="Block"><file name="Form.php" hash="67068968ef7ed62c359413d5e78d4a26"/><file name="Info.php" hash="93994916dc3cfe7467319a91f54f95b3"/><file name="Redirect.php" hash="8058a77971fa18d0f354bf8e8c02d0c2"/></dir><dir name="controllers"><file name="ResultController.php" hash="18315de65ef347fd727dcb4afa6cd017"/></dir><dir name="etc"><file name="config.xml" hash="39aa2d65713faeac4a2b08e63092caa1"/><file name="system.xml" hash="7e3e15001fc7c699cd19ca9b8808799d"/></dir><dir name="Helper"><file name="Data.php" hash="ceb27c2343b4930b268e88d5c4d61af9"/><file name="ViewerList.php" hash="df5990c71e175a67ffb5e759ef23cd0f"/></dir><dir name="Model"><file name="Internetkassa.php" hash="ec2b1f7375fc6ed4aafbd003e7c77c82"/><dir name="Source"><file name="Currencies.php" hash="70bdaf14bd97f39583b143f81e9d1355"/><file name="Issuers.php" hash="bbed5662abe2620bf7394e31e01181cc"/><file name="Languages.php" hash="3292f98c244e6d5c8124a96d174bbf83"/><file name="PaymentMethod.php" hash="0391f356879414f96f4e26af4a78c0de"/><file name="PaymentMethods.php" hash="fa108c22b42eab684441ddf168e1af6c"/><file name="PaymentMethodsList.php" hash="fa38614fdcba5dbbb59af984994c4c98"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>
