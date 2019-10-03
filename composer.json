@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Morningtime_Internetkassa",
+    "name": "OpenMageModuleFostering\/Morningtime_Internetkassa",
     "type": "magento-module",
     "license": "Open-Software-License-(OSL-3.0)",
     "homepage": "",
     "description": "(Dutch only) - Internetkassa voor iDEAL Only, Rabobank, ABN AMRO, ING Bank (TWYP), Fortis (NEOS) en Ogone. Ondersteuning voor iDEAL, Credit Cards, Paypal en veel meer!",
     "authors": [
-    {
-        "name": "Mathijs Koenraadt",
-        "email": "info@morningtime.com"
-    }
-],
+        {
+            "name": "Mathijs Koenraadt",
+            "email": "info@morningtime.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
